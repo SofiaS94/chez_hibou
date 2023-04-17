@@ -7,8 +7,10 @@ class HomeController extends AbstractController
     /**
      * Display home page
      */
+
     public function index(): string
     {
-        return $this->twig->render('Home/index.html.twig');
+        $pageTitle = "Page d'accueil"; // titre de la page
+        return $this->twig->render('Home/IndexNew.html.twig');
     }
 }
