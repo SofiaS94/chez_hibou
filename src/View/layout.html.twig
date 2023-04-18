@@ -17,23 +17,25 @@
 		<link rel="icon" href="/assets/images/favicon.png">
 
 
+
 		<title>
 			{% block title %}Chez Hibou
 			{% endblock %}
 		</title>
 
-		<link
-		rel="stylesheet" href="/assets/css/style.css">
-		<!-- MDB -->
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.js"></script>
-		{% block stylesheet %}{% endblock %}
-	</head>
+<body>
+    {% include 'Components/_nav.html.twig' %}
+    <main>
+    
+            {% block sideNav %}{% endblock %}
+            {% block content %}{% endblock %}
+         
+    </main>
+    {% include 'Components/_footer.html.twig' %}
+    {% block javascript %}{% endblock %}
 
-	<body>
-		{% include 'Components/_nav.html.twig' %}
-		{% block content %}{% endblock %}
-		{% include 'Components/_footer.html.twig' %}
-		{% block javascript %}{% endblock %}
+
+		
 
 	</body>
 </html>
