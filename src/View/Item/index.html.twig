@@ -1,6 +1,45 @@
 {% extends 'layout.html.twig' %}
 {% block sideNav %}
-    {% include 'Components/_sideNav.html.twig' %}
+    
+<div class="d-flex">
+		<div class="d-flex">
+			<!-- Sidebar -->
+			<nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+				<div class="position-sticky">
+					<div class="list-group list-group-flush mx-3 mt-4">
+						<a href="item/entrees" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+							<i class="fas fa-tachometer-alt fa-fw me-3"></i>
+							<span>Entrées</span>
+						</a>
+						<a href="item/platschauds" class="list-group-item list-group-item-action py-2 ripple">
+							<i class="fas fa-chart-area fa-fw me-3"></i>
+							<span>Plats chauds</span>
+						</a>
+						<a href="#" class="list-group-item list-group-item-action py-2 ripple">
+							<i class="fas fa-lock fa-fw me-3"></i>
+							<span>Plats froids</span>
+						</a>
+						<a href="#" class="list-group-item list-group-item-action py-2 ripple">
+							<i class="fas fa-chart-line fa-fw me-3"></i>
+							<span>Salades</span>
+						</a>
+						<a href="#" class="list-group-item list-group-item-action py-2 ripple">
+							<i class="fas fa-chart-pie fa-fw me-3"></i>
+							<span>Petits plaisirs</span>
+						</a>
+						<a href="#" class="list-group-item list-group-item-action py-2 ripple">
+							<i class="fas fa-chart-bar fa-fw me-3"></i>
+							<span>Desserts</span>
+						</a>
+						<a href="#" class="list-group-item list-group-item-action py-2 ripple">
+							<i class="fas fa-globe fa-fw me-3"></i>
+							<span>Boissons</span>
+						</a>
+					</div>
+				</div>
+			</nav>
+		</div>
+
 {% endblock %}
 
 	{% block content %}
