@@ -22,14 +22,10 @@
 <body>
     {% include 'Components/_nav.html.twig' %}
     <main>
-        <div class="d-flex">
-            <div class="d-flex">
+    
             {% block sideNav %}{% endblock %}
-            </div>
-            <div class="d-flex">
             {% block content %}{% endblock %}
-            </div>
-        </div>
+         
     </main>
     {% include 'Components/_footer.html.twig' %}
     {% block javascript %}{% endblock %}
