@@ -17,13 +17,10 @@
 		<link rel="icon" href="/assets/images/favicon.png">
 
 
-<body>
-    {% include 'Components/_nav.html.twig' %}
-    <main>
-    {% block content %}{% endblock %}
-    </main>
-    {% include 'Components/_footer.html.twig' %}
-    {% block javascript %}{% endblock %}
+		<title>
+			{% block title %}Chez Hibou
+			{% endblock %}
+		</title>
 
 		<link
 		rel="stylesheet" href="/assets/css/style.css">
