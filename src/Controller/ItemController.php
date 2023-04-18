@@ -18,6 +18,19 @@ class ItemController extends AbstractController
     }
 
     /**
+     * List all items dans food
+     */
+    public function listByType(string $typeName = 'entrée'): string
+    {
+        $itemManager = new ItemManager();
+        $items = $itemManager->selectByType($typeName);
+
+        return $this->twig->render('Item/entrees.html.twig', ['items' => $items]);
+    }
+
+
+
+    /**
      *
      */
 

@@ -16,20 +16,17 @@
 
 		<link rel="icon" href="/assets/images/favicon.png">
 
-
-
 		<title>
 			{% block title %}Chez Hibou
 			{% endblock %}
 		</title>
 
 <body>
-    {% include 'Components/_nav.html.twig' %}
+
     <main>
-    
+			{% include 'Components/_nav.html.twig' %}
             {% block sideNav %}{% endblock %}
             {% block content %}{% endblock %}
-         
     </main>
     {% include 'Components/_footer.html.twig' %}
     {% block javascript %}{% endblock %}

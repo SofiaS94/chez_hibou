@@ -9,6 +9,13 @@
 return [
     '' => ['HomeController', 'index',],
     'items' => ['ItemController', 'list',],
+    'item/entrees' => ['ItemController', 'listByType'],
+    'items/Plats_chauds' => ['ItemController', 'list', ['id']],
+    'items/Plats_froids' => ['ItemController', 'list', ['id']],
+    'items/Salades' => ['ItemController', 'list', ['id']],
+    'items/Petits_plaisirs' => ['ItemController', 'list', ['id']],
+    'items/Desserts' => ['ItemController', 'list', ['id']],
+    'items/Boissons' => ['ItemController', 'list', ['id']],
     // 'items/edit' => ['ItemController', 'edit', ['id']],
     // 'item/list' => ['ItemController', 'list', ['id']],
     // 'items/add' => ['ItemController', 'add',],
