@@ -20,7 +20,10 @@
 <body>
     {% include 'Components/_nav.html.twig' %}
     <main>
-    {% block content %}{% endblock %}
+    
+            {% block sideNav %}{% endblock %}
+            {% block content %}{% endblock %}
+         
     </main>
     {% include 'Components/_footer.html.twig' %}
     {% block javascript %}{% endblock %}

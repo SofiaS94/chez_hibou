@@ -29,4 +29,13 @@
 
 main{
     margin-top: 8rem;
+    
 }
+
+#sidebarMenu {
+    /* Définir la largeur souhaitée pour la barre latérale */
+    width: 300px;
+    /* Ajouter d'autres styles souhaités pour la barre latérale */
+  }
+
+
