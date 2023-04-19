@@ -9,10 +9,11 @@
 return [
     '' => ['HomeController', 'index',],
     'items' => ['ItemController', 'list',],
-    'item/entree' => ['ItemController', 'listByType'],
+    'item/entrees' => ['ItemController', 'listByType'],
     'item/platschauds' => ['ItemController', 'listByType'],
     'item/platsfroids' => ['ItemController', 'listByType'],
     'item/salades' => ['ItemController', 'listByType'],
+    'item/accompagnements' => ['ItemController', 'listByType'],
     'item/desserts' => ['ItemController', 'listByType'],
     'item/boissons' => ['ItemController', 'listByType'],
     // 'items/edit' => ['ItemController', 'edit', ['id']],
