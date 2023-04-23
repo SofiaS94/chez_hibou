@@ -23,18 +23,18 @@
 		</title>
 	</head>
 
-<body>
-	<nav>{% include 'Components/_nav.html.twig' %}</nav>
-    <main>
-	 		{% block sideNav %}{% endblock %}
-            {% block content %}{% endblock %}
-    </main>
-    {% include 'Components/_footer.html.twig' %}
-    {% block javascript %}{% endblock %}
+	<body>
+		<nav>{% include 'Components/_nav.html.twig' %}</nav>
+		<main>
+			{% block sideNav %}{% endblock %}
+			{% block content %}{% endblock %}
+		</main>
+
+		{% block javascript %}{% endblock %}
 
 
-			<footer>
-				{% include 'Components/_footer.html.twig'%}</footer>
-		</body>
+		<footer>
+			{% include 'Components/_footer.html.twig'%}</footer>
+	</body>
 
-	</html>
+</html>

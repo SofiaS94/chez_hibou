@@ -16,7 +16,7 @@ return [
     'item/accompagnements' => ['ItemController', 'listByType'],
     'item/desserts' => ['ItemController', 'listByType'],
     'item/boissons' => ['ItemController', 'listByType'],
-    'restaurant/presentation' => ['HomeController','restaurant',],
+    'restaurant/presentation' => ['HomeController', 'restaurant',],
     // 'items/edit' => ['ItemController', 'edit', ['id']],
     // 'item/list' => ['ItemController', 'list', ['id']],
     // 'items/add' => ['ItemController', 'add',],
@@ -24,5 +24,6 @@ return [
     'cart/show' => ['CartController', 'show', ['id']],
     'cart/edit' => ['CartController', 'edit', ['id']],
     'cart/delete' => ['CartController', 'delete',],
-    'login' => ['LoginController', 'login'],
+    'login' => ['UserController', 'login'],
+    'register' => ['UserController', 'register'],
 ];

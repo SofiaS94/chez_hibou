@@ -3,12 +3,11 @@
 namespace App\Controller;
 
 use App\Controller\AbstractController;
-use App\Model\LoginManager;
+use App\Model\UserManager;
+use Exception;
 
-class LoginController extends AbstractController
+class UserController extends AbstractController
 {
-
-
     public function login(): string
     {
         $credentials = $_POST;
@@ -17,8 +16,8 @@ class LoginController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             try {
                 if ($this->validate($credentials)) {
-                    $loginManager = new LoginManager();
-                    $user = $loginManager->selectOneByEmail($credentials['email']);
+                    $userManager = new UserManager();
+                    $user = $userManager->selectOneByEmail($credentials['email']);
 
                     $password = $user['password'];
                     if (password_verify($credentials['password'], $password)) {
@@ -61,19 +60,19 @@ class LoginController extends AbstractController
         // Return the validation errors array, or null if no errors
         return !empty($errors) ? $errors : null;
     }
-}
 
-   /* if (empty($email)) {
-                $errors['email'] = "L'email est obligatoire.";
+    public function register(): string
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $credentials = $_POST;
+            $userManager = new UserManager();
+            try {
+                $userManager->insert($credentials);
+                return $this->login();
+            } catch (\Exception $e) {
+                throw new \Exception('Failed to register' . $e->getMessage());
             }
-            if (empty($password)) {
-                $errors['password'] = 'Le mot de pass est obligatoire.';
-            }
-            if (empty($errors)) {
-                $user = $loginManager->checkLogin($email, $password);
-                if (!$user) {
-                    $errors['email'] = 'L\'email ou mot de pass est incorrect. ';
-                } elseif (!password_verify($password, $user['password'])) {
-                    $errors['email'] = 'L\'email ou mot de pass est incorrect. ';
-                }
-            }*/
+        }
+        return $this->twig->render('User/register.html.twig');
+    }
+}
