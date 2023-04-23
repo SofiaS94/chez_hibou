@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 8.0.32, for macos13 (arm64)
+-- MySQL dump 10.13  Distrib 8.0.32, for macos13 (x86_64)
 --
 -- Host: localhost    Database: chez_hibou
 -- ------------------------------------------------------
