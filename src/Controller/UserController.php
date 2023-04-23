@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Controller\AbstractController;
 use App\Model\UserManager;
-use Exception;
+use App\Controller\Exception;
 
 class UserController extends AbstractController
 {
