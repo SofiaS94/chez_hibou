@@ -26,4 +26,5 @@ return [
     'cart/delete' => ['CartController', 'delete',],
     'login' => ['UserController', 'login'],
     'register' => ['UserController', 'register'],
+    'logout' => ['UserController', 'logout'],
 ];

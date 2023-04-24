@@ -4,7 +4,8 @@ namespace App\Controller;
 
 use App\Controller\AbstractController;
 use App\Model\UserManager;
-use App\Controller\Exception;
+
+use App\Model\FormManager;
 
 class UserController extends AbstractController
 {
@@ -15,13 +16,18 @@ class UserController extends AbstractController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             try {
-                if ($this->validate($credentials)) {
+                $errors = FormManager::validateRegister();
+                if (empty($errors)) {
                     $userManager = new UserManager();
+
                     $user = $userManager->selectOneByEmail($credentials['email']);
 
-                    $password = $user['password'];
-                    if (password_verify($credentials['password'], $password)) {
+                    if (isset($user['password']) && password_verify($credentials['password'], $user['password'])) {
                         $_SESSION['user_id'] = $user['id'];
+                        header('Location:/');
+                        die();
+                    } else {
+                        $errors[] = "Le mot de pass ou l'adress mail est incorrect.";
                     }
                 }
             } catch (\Exception $exception) {
@@ -34,32 +40,7 @@ class UserController extends AbstractController
     }
 
 
-    public function validate(array $credentials)
-    {
-        $credentials = $_POST;
-        $email = $_POST['email'];
-        $password = $_POST['password'];
 
-        $errors = []; // Initialize an empty array to store validation errors
-
-        // Extract email and password from the $credentials array
-        $email = isset($credentials['email']) ? trim($credentials['email']) : '';
-        $password = isset($credentials['password']) ? trim($credentials['password']) : '';
-
-        // Perform validation checks
-        if (empty($email)) {
-            $errors[] = 'Email is required.';
-        } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $errors[] = 'Email is not valid.';
-        }
-
-        if (empty($password)) {
-            $errors[] = 'Password is required.';
-        }
-
-        // Return the validation errors array, or null if no errors
-        return !empty($errors) ? $errors : null;
-    }
 
     public function register(): string
     {
@@ -67,12 +48,20 @@ class UserController extends AbstractController
             $credentials = $_POST;
             $userManager = new UserManager();
             try {
-                $userManager->insert($credentials);
-                return $this->login();
+                $_SESSION['user_id'] = $userManager->insert($credentials);
+                header('Location:/');
+                die();
             } catch (\Exception $e) {
                 throw new \Exception('Failed to register' . $e->getMessage());
             }
         }
         return $this->twig->render('User/register.html.twig');
+    }
+
+    public function logout(): void
+    {
+        session_destroy();
+        header('Location:/');
+        die();
     }
 }
