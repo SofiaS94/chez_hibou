@@ -4,7 +4,6 @@ namespace App\Model;
 
 use DateTime;
 
-
 class PaymentModel
 {
     public function validateCardType($cardType)
@@ -42,14 +41,5 @@ class PaymentModel
         // validate the CVV entered in the form
         // return true if it is a valid CVV, false otherwise
         return preg_match('/^\d{3}$/', $cvv);
-    }
-
-    public function processPayment($paymentDetails)
-    {
-        // process the payment using the validated payment details
-        // return true if the payment was successful, false otherwise
-        // the $paymentDetails argument would contain all the validated payment details, e.g. array("cardType" => "visa", "cardholderName" => "John Doe", "cardNumber" => "1234 5678 9012 3456", "expirationDate" => "02/2023", "cvv" => "123")
-        // you would need to implement the payment processing logic here
-        return true;
     }
 }
