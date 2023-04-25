@@ -39,6 +39,9 @@ class UserController extends AbstractController
         ]);
     }
 
+
+
+
     public function register(): string
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
