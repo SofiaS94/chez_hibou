@@ -32,35 +32,6 @@ class ItemController extends AbstractController
         return $this->twig->render('Item/' . $typeName . '.html.twig', ['items' => $items]);
     }
 
-    /**
-     * Add a new item in the cart
-     */
-    public function add(int $id, $request)
-    {
-
-        $itemManager = new ItemManager();
-
-        // récupérer le produit en BD
-        $item = $itemManager->selectOneById($id);
-
-        // Récupérer le panier depuis la session ou le créer s'il n'existe pas encore
-        $cart = $request->getSession()->get('cart', []);
-
-        // Ajouter le produit dans le panier
-        if (isset($cart[$id])) {
-            $cart[$id]['quantity']++;
-        } else {
-            $cart[$id] = [
-            'product' => $item,
-            'quantity' => 1,
-            ];
-
-        // Stocker le panier dans la session
-            $request->getSession()->set('cart', $cart);
-
-            return $this->twig->render('/cart');
-        }
-    }
 }
 
     /**
