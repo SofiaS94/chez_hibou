@@ -4,32 +4,35 @@
 	{% include 'Components/_sideNav.html.twig' %}
 {% endblock %}
 
-    {% block content %}
-    
-    <div class="d-flex">
-			<div class="d-flex flex-column align-items-center">
-				<h1>Nos produits</h1>
-				<div class="container py-4 d-flex flex-column justify-content-start gap-4">
-					<div class="row">
-						{% for item in items %}
-							<div class="col-sm-4 mb-4">
-								<div class="card h-100">
-									<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
-										<img
-										src="/{{item.picture}}" class="img-fluid card-img-top" style="object-fit: cover; max-height: 200px"/>
-										<!-- Ajouter la classe card-img-top pour gérer la hauteur de la carte, et utiliser object-fit: cover pour conserver les proportions d'origine de l'image -->
-										<a>
-											<div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
-										</a>
-									</div>
-									<div class="card-body">
-										<h5 class="card-title text-center">{{item.quantity}} {{item.name}}</h5>
-										<p class="card-text">
-											{{item.description}}
-										</p>
-										<p class="product-price text-center mt-auto">{{item.price}} € </p>
-										<a href="#" class="btn btn-dark addCart">Ajouter au panier</a>
-									</div>
+{% block content %}
+
+	<div class="d-flex">
+		<div class="d-flex flex-column align-items-center">
+			<h1>Nos produits</h1>
+			<div class="container py-4 d-flex flex-column justify-content-start gap-4">
+				<div class="row">
+					{% for item in items %}
+						<div class="col-sm-4 mb-4">
+							<div class="card h-100">
+								<div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+									<img
+									src="/{{item.picture}}" class="img-fluid card-img-top" style="object-fit: cover; max-height: 200px"/>
+									<!-- Ajouter la classe card-img-top pour gérer la hauteur de la carte, et utiliser object-fit: cover pour conserver les proportions d'origine de l'image -->
+									<a>
+										<div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+									</a>
+								</div>
+								<div class="card-body">
+									<h5 class="card-title text-center">{{item.quantity}}
+										{{item.name}}</h5>
+									<p class="card-text">
+										{{item.description}}
+									</p>
+									<p 
+									class="product-price text-center mt-auto">{{item.price}} €
+									</p>
+									{# <a href="#" class="btn btn-dark addCart">Ajouter au panier</a> #}
+									<a href="add?id={{ item.id }}" class="btn btn-dark addCart">Add to cart</a>
 								</div>
 							</div>
 						</div>
