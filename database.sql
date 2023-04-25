@@ -107,7 +107,7 @@ CREATE TABLE `customer` (
   `dateOfBirth` date DEFAULT NULL,
   `password` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -116,7 +116,7 @@ CREATE TABLE `customer` (
 
 LOCK TABLES `customer` WRITE;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
-INSERT INTO `customer` VALUES (1,'manon','lambert','manon@gmaiul.com',6060606,'bla bla 333360',NULL,'1993-06-18','blabla'),(2,'MANON','LAMBERT','manlamb.ml@gmail.com',635660818,'39A route de morillon','','1993-06-18','$2y$10$CecUghSj.60tKb7.7GxZSet/FqJi0wPelHptYrKPFjeJHuv3stA5S'),(3,'manon','lambert','manon@gamil.com',NULL,'','',NULL,'$2y$10$kogXXJ/UiDr5Fx67l9kbl.MWzN7yDnH9jacQhMmSWuWY/yxVCatFq'),(4,'manon','lambert','manlamb.ml@gmail.com',NULL,'','',NULL,'$2y$10$PrViIkxR/WPf2acKF/pu.u6B/VO6yf/DQyWfyDw.wooVOHJyUVg2y'),(5,'123','321','123@123.com',NULL,NULL,NULL,NULL,'$2y$10$tB8Crj4DLUbjvKBX6tbTmeOglAb7EPS0mH7TKyN4BJGZjtHQe0t46');
+INSERT INTO `customer` VALUES (1,'manon','lambert','manon@gmaiul.com',6060606,'bla bla 333360',NULL,'1993-06-18','blabla'),(2,'MANON','LAMBERT','manlamb.ml@gmail.com',635660818,'39A route de morillon','','1993-06-18','$2y$10$CecUghSj.60tKb7.7GxZSet/FqJi0wPelHptYrKPFjeJHuv3stA5S'),(3,'manon','lambert','manon@gamil.com',NULL,'','',NULL,'$2y$10$kogXXJ/UiDr5Fx67l9kbl.MWzN7yDnH9jacQhMmSWuWY/yxVCatFq'),(4,'manon','lambert','manlamb.ml@gmail.com',NULL,'','',NULL,'$2y$10$PrViIkxR/WPf2acKF/pu.u6B/VO6yf/DQyWfyDw.wooVOHJyUVg2y');
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -159,4 +159,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-25 23:02:44
+-- Dump completed on 2023-04-25 17:14:12
