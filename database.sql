@@ -41,6 +41,55 @@ LOCK TABLES `cart` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `command`
+--
+
+DROP TABLE IF EXISTS `command`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `command` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `status` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `commande_FK` FOREIGN KEY (`id`) REFERENCES `customer` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `command`
+--
+
+LOCK TABLES `command` WRITE;
+/*!40000 ALTER TABLE `command` DISABLE KEYS */;
+/*!40000 ALTER TABLE `command` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `commandProduct`
+--
+
+DROP TABLE IF EXISTS `commandProduct`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `commandProduct` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `quantity` int NOT NULL,
+  PRIMARY KEY (`id`),
+  CONSTRAINT `commandProduct_FK` FOREIGN KEY (`id`) REFERENCES `command` (`id`),
+  CONSTRAINT `commandProduct_FK_1` FOREIGN KEY (`id`) REFERENCES `food` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `commandProduct`
+--
+
+LOCK TABLES `commandProduct` WRITE;
+/*!40000 ALTER TABLE `commandProduct` DISABLE KEYS */;
+/*!40000 ALTER TABLE `commandProduct` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `customer`
 --
 
@@ -52,13 +101,13 @@ CREATE TABLE `customer` (
   `firstname` varchar(100) NOT NULL,
   `lastname` varchar(100) NOT NULL,
   `email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `phone_number` int NOT NULL,
+  `phone_number` int DEFAULT NULL,
   `address` varchar(100) DEFAULT NULL,
   `adress_2` varchar(100) DEFAULT NULL,
-  `dob` date DEFAULT NULL,
+  `dateOfBirth` date DEFAULT NULL,
   `password` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +116,7 @@ CREATE TABLE `customer` (
 
 LOCK TABLES `customer` WRITE;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
-INSERT INTO `customer` VALUES (1,'manon','lambert','manon@gmaiul.com',6060606,'bla bla 333360',NULL,'1993-06-18','blabla'),(2,'MANON','LAMBERT','manlamb.ml@gmail.com',635660818,'39A route de morillon','','1993-06-18','$2y$10$CecUghSj.60tKb7.7GxZSet/FqJi0wPelHptYrKPFjeJHuv3stA5S');
+INSERT INTO `customer` VALUES (1,'manon','lambert','manon@gmaiul.com',6060606,'bla bla 333360',NULL,'1993-06-18','blabla'),(2,'MANON','LAMBERT','manlamb.ml@gmail.com',635660818,'39A route de morillon','','1993-06-18','$2y$10$CecUghSj.60tKb7.7GxZSet/FqJi0wPelHptYrKPFjeJHuv3stA5S'),(3,'manon','lambert','manon@gamil.com',NULL,'','',NULL,'$2y$10$kogXXJ/UiDr5Fx67l9kbl.MWzN7yDnH9jacQhMmSWuWY/yxVCatFq'),(4,'manon','lambert','manlamb.ml@gmail.com',NULL,'','',NULL,'$2y$10$PrViIkxR/WPf2acKF/pu.u6B/VO6yf/DQyWfyDw.wooVOHJyUVg2y');
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -141,4 +190,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-25 16:46:56
+-- Dump completed on 2023-04-25 17:14:12
