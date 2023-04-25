@@ -18,15 +18,24 @@
 				prenom :{{user.firstname}}</li>
 			<li class="list-group-item">
 				email :{{user.email}}</li>
-
 			<li class="list-group-item">
 				date de naissance :{{user.dob}}</li>
-
+			<div class="mb-3">
+				<label for="phone_number" class="form-label">Phone Number</label>
+				<input class="form-control" type="text" id="phone_number" name="phone_number" required>
+			</div>
 			<li class="list-group-item">
 				portable :{{user.phone_number}}</li>
-
+			<div class="mb-3">
+				<label for="address" class="form-label">Address Principal</label>
+				<input class="form-control" type="text" id="address" name="address" required>
+			</div>
 			<li class="list-group-item">
 				adresse :{{user.address}}</li>
+			<div class="mb-3">
+				<label for="adress_2" class="form-label">Address Secondery</label>
+				<input class="form-control" type="text" id="adress_2" name="adress_2">
+			</div>
 
 			<li class="list-group-item">
 				adresse secondaire : (adress livraison):{{user.address}}</li>
@@ -37,25 +46,10 @@
 		<h1>
 			Mes commandes
 		</h1>
-		{% if commande %}
-			{% for commande in commandes %}
-				<li class="list-group-item">{{commande}}</li>
-			{% endfor %}
 
-
-		{% else %}
-			<li class="list-group-item">
-				<p>Vous n'avez pas encore faire la commande.</p>
-			</li>
-
-		{% endif %}
-
-		<form action="/modifyprofil" method="post">
-			<div class="mb-3">
-				<button type="submit" class="btn btn-dark btn-block">Modifier</button>
-			</div>
-		</form>
-
+		<div class="mb-3">
+			<button type="submit" class="btn btn-dark btn-block">Confirmer le changement</button>
+		</div>
 
 	</div>
 {% endblock %}
