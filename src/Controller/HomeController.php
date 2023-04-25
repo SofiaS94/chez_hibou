@@ -18,4 +18,8 @@ class HomeController extends AbstractController
     {
         return $this->twig->render('Restaurant/presentation.html.twig');
     }
+    public function service(): string
+    {
+        return $this->twig->render('Restaurant/serviceClient.html.twig');
+    }
 }

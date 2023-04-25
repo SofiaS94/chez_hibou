@@ -2,10 +2,8 @@
 
 namespace App\Model;
 
-
 class CartManager extends AbstractManager
 {
-
     /**
      * Add a new item in the cart
      */
@@ -14,26 +12,22 @@ class CartManager extends AbstractManager
 
         $itemManager = new ItemManager();
 
-        if (!isset($_SESSION))
-        {
+        if (!isset($_SESSION)) {
             session_start();
         }
-        if (!isset($_SESSION['cart']))
-        {
+        if (!isset($_SESSION['cart'])) {
             $_SESSION['cart'] = [];
         }
-        if (isset($_GET['id']))
-        {
+        if (isset($_GET['id'])) {
             $id = $_GET['id'];
         }
          // récupérer le produit en BD
          $item = $itemManager->selectOneById($id);
-         
-        if (isset($_SESSION['cart'][$id]))
-        {
-            $_SESSION['cart'][$id]++;   
+
+        if (isset($_SESSION['cart'][$id])) {
+            $_SESSION['cart'][$id]++;
         } else {
-            $_SESSION['cart'][$id] = 1; 
+            $_SESSION['cart'][$id] = 1;
         }
         // var_dump($_SESSION['cart']);
         // // Récupérer le panier depuis la session ou le créer s'il n'existe pas encore
@@ -41,7 +35,7 @@ class CartManager extends AbstractManager
         // if(!isset($_SESSION['cart']))
         // {
         //     $_SESSION['cart'] = [];
-        // } 
+        // }
         // $cart = $_SESSION['cart'];
 
         // // Ajouter le produit dans le panier

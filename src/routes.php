@@ -17,6 +17,7 @@ return [
     'item/desserts' => ['ItemController', 'listByType'],
     'item/boissons' => ['ItemController', 'listByType'],
     'restaurant/presentation' => ['HomeController', 'restaurant',],
+    'restaurant/serviceClient' => ['HomeController', 'service',],
     // 'items/edit' => ['ItemController', 'edit', ['id']],
     // 'item/list' => ['ItemController', 'list', ['id']],
     // 'items/add' => ['ItemController', 'add',],
