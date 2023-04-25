@@ -25,7 +25,7 @@ class UserManager extends AbstractManager
         $statement->bindValue(':email', $credentials['email']);
         $statement->bindValue(':password', password_hash($credentials['password'], PASSWORD_DEFAULT));
         $statement->bindValue(':address', $credentials['address']);
-        $statement->bindValue(':firstname', $credentials['firstname']);
+        $statement->bindValue(':firsthand', $credentials['firstname']);
         $statement->bindValue(':lastname', $credentials['lastname']);
         $statement->bindValue(':adress_2', $credentials['adress_2']);
         $statement->bindValue(':phone_number', $credentials['phone_number']);
