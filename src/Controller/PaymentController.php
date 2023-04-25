@@ -41,22 +41,5 @@ class PaymentController
             echo "Invalid CVV";
             return;
         }
-
-        // Process payment
-        $paymentDetails = array(
-            'cardType' => $cardType,
-            'cardholderName' => $cardholderName,
-            'cardNumber' => $cardNumber,
-            'expirationDate' => $expirationDate,
-            'cvv' => $cvv
-        );
-
-        if (!$paymentModel->processPayment($paymentDetails)) {
-            echo "Payment processing failed";
-            return;
-        }
-
-        // Payment success
-        echo "Payment successful!";
     }
 }
