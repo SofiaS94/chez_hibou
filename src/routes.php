@@ -22,9 +22,10 @@ return [
     // 'items/add' => ['ItemController', 'add',],
     // 'items/delete' => ['ItemController', 'delete',],
     'cart/show' => ['CartController', 'show', ['id']],
-    'cart/edit' => ['CartController', 'edit', ['id']],
-    'cart/delete' => ['CartController', 'delete',],
+    // 'cart/edit' => ['CartController', 'edit', ['id']],
+    // 'cart/delete' => ['CartController', 'delete',],
     'login' => ['UserController', 'login'],
     'register' => ['UserController', 'register'],
     'logout' => ['UserController', 'logout'],
+    'item/add' => ['CartController', 'add', ['id'],],
 ];
