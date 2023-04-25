@@ -64,4 +64,8 @@ class UserController extends AbstractController
         header('Location:/');
         die();
     }
+
+    public function quickregister()
+    {
+    }
 }
