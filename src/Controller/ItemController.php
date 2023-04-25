@@ -31,6 +31,10 @@ class ItemController extends AbstractController
         // Renvoyer la réponse sous forme de vue générée avec les items récupérés
         return $this->twig->render('Item/' . $typeName . '.html.twig', ['items' => $items]);
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 5dc9b06da280365d58a091e4cb34ab035bb6eba4
 }
 
     /**

@@ -28,6 +28,9 @@ return [
     'login' => ['UserController', 'login'],
     'register' => ['UserController', 'register'],
     'logout' => ['UserController', 'logout'],
+<<<<<<< HEAD
     'profil' => ['UserController', 'profil'],
+=======
+>>>>>>> 5dc9b06da280365d58a091e4cb34ab035bb6eba4
     'item/add' => ['CartController', 'add', ['id'],],
 ];
