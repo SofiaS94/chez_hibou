@@ -24,7 +24,6 @@ class CartManager extends AbstractManager
         $item = $itemManager->selectOneById($id);
         $quantity = $_SESSION['cart'][$id]['quantity'] ?? 0;
         $_SESSION['cart'][$id] = [
-            'quantity' => 1,
             'name' => $item['name'],
             'price' => $item['price'],
             'quantity' => $quantity + 1
