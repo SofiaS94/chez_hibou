@@ -58,6 +58,10 @@ main{
     align-items: center; /* centrer verticalement */
   }
 
+  .product-price {
+    padding: 5px;
+    font-weight: bold;
+  }
   #video-section {
     position: relative;
     height: 100vh;
