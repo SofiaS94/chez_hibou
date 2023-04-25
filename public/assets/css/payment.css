@@ -1,0 +1,106 @@
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #010004;
+    max-height: auto;
+}
+
+.h-100 h-custom {
+    background-color: #4087e5;
+}
+
+.col {
+    padding-top: 4rem;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+div.col-lg-5 {
+    margin-top: 40px;
+
+}
+
+
+btn-group-lg>.btn,
+.btn-lg {
+    --mdb-btn-padding-top: 0.75rem;
+    --mdb-btn-padding-bottom: 0.6875rem;
+    --mdb-btn-padding-x: 1.6875rem;
+    --mdb-btn-font-size: 0.875rem;
+    --mdb-btn-line-height: 1.6;
+}
+
+.btn-info {
+    --mdb-btn-bg: #e6002A;
+    --mdb-btn-color: #FFFFFF;
+    --mdb-btn-box-shadow: 0 4px 9px -4px #010004;
+    --mdb-btn-hover-bg: #FFFFFF;
+    --mdb-btn-hover-color: #E6002A;
+    --mdb-btn-focus-bg: #50abc8;
+    --mdb-btn-focus-color: #fff;
+    --mdb-btn-active-bg: #e6002A;
+    --mdb-btn-active-color: #fff;
+}
+
+.card {
+    background-color: #FFFFFF;
+}
+
+.bg {
+    background-color: #060612;
+}
+
+.logo-footer {
+    width: 4rem;
+}
+
+.adress {
+    color: #010004;
+}
+
+.text-body {
+    color: #010004;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    color: #010004;
+    padding-right: 3rem;
+    padding-left: 4rem;
+}
+
+.text {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.red-title {
+    color: #E6002A;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+@media (min-width: 1025px) {
+    .h-custom {
+        height: 100vh !important;
+    }
+}
