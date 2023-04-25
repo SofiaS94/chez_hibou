@@ -10,6 +10,12 @@ class HomeController extends AbstractController
 
     public function index(): string
     {
+
         return $this->twig->render('Home/index.html.twig');
+    }
+
+    public function restaurant(): string
+    {
+        return $this->twig->render('Restaurant/presentation.html.twig');
     }
 }

@@ -18,6 +18,23 @@ class ItemController extends AbstractController
     }
 
     /**
+     * List all items dans food
+     */
+    public function listByType(string $typeName = 'entree'): string
+    {
+        // Récupérer le type de plat sélectionné depuis les paramètres de requête HTTP
+        $typeName = $_GET['type'] ?? 'entree'; // Utiliser 'entree' comme valeur par défaut
+
+        $itemManager = new ItemManager();
+        $items = $itemManager->selectByType($typeName);
+
+        // Renvoyer la réponse sous forme de vue générée avec les items récupérés
+        return $this->twig->render('Item/' . $typeName . '.html.twig', ['items' => $items]);
+    }
+
+}
+
+    /**
      *
      */
 
@@ -31,7 +48,7 @@ class ItemController extends AbstractController
 
     //     return $this->twig->render('Item/show.html.twig', ['name' => $item]);
     // }
-}
+
 
 
     //  * /Edit a specific item
@@ -61,27 +78,6 @@ class ItemController extends AbstractController
     //     ]);
     // }
 
-    // /**
-    //  * Add a new item
-    //  */
-    // public function add(): ?string
-    // {
-    //     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    //         // clean $_POST data
-    //         $item = array_map('trim', $_POST);
-
-    //         // TODO validations (length, format...)
-
-    //         // if validation is ok, insert and redirection
-    //         $itemManager = new ItemManager();
-    //         $id = $itemManager->insert($item);
-
-    //         header('Location:/items/show?id=' . $id);
-    //         return null;
-    //     }
-
-    //     return $this->twig->render('Item/add.html.twig');
-    // }
 
     // /**
     //  * Delete a specific item

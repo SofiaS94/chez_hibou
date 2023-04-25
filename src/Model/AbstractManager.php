@@ -34,6 +34,24 @@ abstract class AbstractManager
     }
 
     /**
+     * Get all rows from a type in the database
+     */
+    public function selectByType(string $type, string $orderBy = '', string $direction = 'ASC'): array
+    {
+        $query = 'SELECT * FROM ' . static::TABLE . ' WHERE type = :type';
+        if ($orderBy) {
+            $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
+        }
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue(':type', $type, PDO::PARAM_STR);
+        $statement->execute();
+
+        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $results ?: [];
+    }
+
+
+    /**
      * Get one row from database by ID.
      */
     public function selectOneById(int $id): array|false

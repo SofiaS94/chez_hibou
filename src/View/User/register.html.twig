@@ -1,0 +1,47 @@
+{% extends "layout.html.twig" %}
+{% block content %}
+	<div class="container" style="margin-top: 10%; text-align: center;">
+		<div class="col-md-6 offset-md-3">
+			<h1>Register an account</h1>
+			<p>Please fill the form below to create an account.</p>
+			<form action="" method="post" style="text-align:left;">
+				<div class="mb-3">
+					<label for="email" class="form-label">Email</label>
+					<input class="form-control" type="email" id="email" name="email" required>
+				</div>
+				<div class="mb-3">
+					<label for="password" class="form-label">Password</label>
+					<input class="form-control" type="password" id="password" name="password" required>
+				</div>
+
+				<div class="mb-3">
+					<label for="firstname" class="form-label">Firstname</label>
+					<input class="form-control" type="text" id="firstname" name="firstname" required>
+				</div>
+				<div class="mb-3">
+					<label for="lastname" class="form-label">Lastname</label>
+					<input class="form-control" type="text" id="lastname" name="lastname" required>
+				</div>
+				<div class="mb-3">
+					<label for="dob" class="form-label">Birthday</label>
+					<input class="form-control" type="date" id="dob" name="dob" required>
+				</div>
+				<div class="mb-3">
+					<label for="phone_number" class="form-label">Phone Number</label>
+					<input class="form-control" type="text" id="phone_number" name="phone_number" required>
+				</div>
+				<div class="mb-3">
+					<label for="address" class="form-label">Address Principal</label>
+					<input class="form-control" type="text" id="address" name="address" required>
+				</div>
+				<div class="mb-3">
+					<label for="adress_2" class="form-label">Address Secondery</label>
+					<input class="form-control" type="text" id="adress_2" name="adress_2">
+				</div>
+				<div class="mb-3">
+					<button type="submit" class="btn btn-dark btn-block">Create account</button>
+				</div>
+			</form>
+		</div>
+	</div>
+{% endblock %}
