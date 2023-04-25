@@ -29,4 +29,5 @@ return [
     'logout' => ['UserController', 'logout'],
     'item/add' => ['CartController', 'add', ['id'],],
     'profil' => ['UserController', 'profil'],
+    'modifyprofil' => ['UserController', 'modifyprofil'],
 ];
