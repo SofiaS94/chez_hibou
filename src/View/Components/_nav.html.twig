@@ -28,8 +28,8 @@
 					<a class="nav-link" href="restaurant/presentation">Le restaurant</a>
 				</li>
 				{# <li class="nav-item ">
-																																																																                        <a class="nav-link" href="/reservation">Reservation</a>
-																																																																                    </li> #}
+																																																																												                        <a class="nav-link" href="/reservation">Reservation</a>
+																																																																												                    </li> #}
 
 			</ul>
 			<!-- Left links -->
@@ -49,7 +49,7 @@
 				{% if user %}
 					<li class="nav-item">
 
-						{{ user.lastname }}
+						<a class="nav-link" href="/profil">Welcome,{{ user.lastname }}</a>
 
 					</li>
 					<li class="nav-item">

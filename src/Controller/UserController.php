@@ -65,7 +65,8 @@ class UserController extends AbstractController
         die();
     }
 
-    public function quickregister()
+    public function profil()
     {
+        return $this->twig->render('User/profil.html.twig');
     }
 }

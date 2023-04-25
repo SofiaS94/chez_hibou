@@ -1,0 +1,30 @@
+{% extends "layout.html.twig" %}
+{% block sideNav %}
+	{% include 'Components/_sideNav.html.twig' %}
+{% endblock %}
+
+{% block content %}
+	<div class="container d-flex flex-column align-items-left">
+		<h1>
+			Mon profil
+		</h1>
+
+
+		<ul class="list-group list-group-light">
+
+			<li class="list-group-item">Mon nom:{{user.lastname}}</li>
+			<li class="list-group-item">Mon prenom:{{user.firstname}}</li>
+			<li class="list-group-item">Email login:{{user.email}}</li>
+			<li class="list-group-item">Ma date de naissance:{{user.dob}}</li>
+			<li class="list-group-item">Ma portable:{{user.phone_number}}</li>
+			<li class="list-group-item">Mon address:{{user.address}}</li>
+			<li class="list-group-item">Mon secondaire address(adress livraison):{{user.address}}</li>
+
+
+		</ul>
+
+		<h1>
+			Ma commande
+		</h1>
+	</div>
+{% endblock %}
