@@ -2,10 +2,10 @@
 
 namespace App\Controller;
 
-use App\Controller\AbstractController;
-use App\Model\UserManager;
-
+use Exception;
 use App\Model\FormManager;
+use App\Model\UserManager;
+use App\Controller\AbstractController;
 
 class UserController extends AbstractController
 {
@@ -45,14 +45,13 @@ class UserController extends AbstractController
     public function register(): string
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $credentials = $_POST;
             $userManager = new UserManager();
             try {
-                $_SESSION['user_id'] = $userManager->insert($credentials);
+                $_SESSION['user_id'] = $userManager->insert($_POST);
                 header('Location:/');
                 die();
             } catch (\Exception $e) {
-                throw new \Exception('Failed to register' . $e->getMessage());
+                throw new Exception('Failed to register' . $e->getMessage());
             }
         }
         return $this->twig->render('User/register.html.twig');
