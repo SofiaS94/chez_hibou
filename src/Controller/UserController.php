@@ -57,6 +57,8 @@ class UserController extends AbstractController
         return $this->render('User/register.html.twig');
     }
 
+
+
     public function logout(): void
     {
         session_destroy();
@@ -71,6 +73,7 @@ class UserController extends AbstractController
 
     public function modifyprofil()
     {
+
         return $this->twig->render('User/modifyprofil.html.twig');
     }
 
@@ -86,6 +89,7 @@ class UserController extends AbstractController
             $user = array_map('trim', $_POST);
             $userManager->update($user);
             header('Location: /profil?id=' . $id);
+            exit();
         }
 
         return $this->twig->render('profil.html.twig', [

@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block content %}
-	<div class="container d-flex flex-column align-items-left">
+	<div class="container-wrapper d-flex flex-column align-items-left">
 		<h1>
 			Mes données personnelles
 		</h1>
@@ -13,9 +13,9 @@
 		<form action="" method="post" style="text-align:left;">
 			<div class="mb-3">
 				<input type="hidden" value="{{ user.id }}" name="id">
-				<input type="email" value="{{ user.email }}" name="title">
 				<label for="email" class="form-label">Email</label>
-				{# <input class="form-control" type="email" id="email" name="email" required readonly> #}
+				<input type="email" value="{{ user.email }}" name="email">
+
 			</div>
 			<div class="mb-3">
 				<label for="password" class="form-label">Mot de passe</label>
@@ -40,7 +40,8 @@
 			</div>
 
 			<div class="mb-3">
-				<label for="adress_2" class="form-label">Adresse secondaire </label>
+				<label for="adress_2" class="form-label">Adresse secondaire
+				</label>
 				<input class="form-control" type="text" id="adress_2" name="adress_2">
 			</div>
 

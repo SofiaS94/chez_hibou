@@ -31,4 +31,5 @@ return [
     'profil' => ['UserController', 'profil'],
 
     'modifyprofil' => ['UserController', 'modifyprofil'],
+
 ];

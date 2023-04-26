@@ -26,7 +26,9 @@ class CartManager extends AbstractManager
         $_SESSION['cart'][$id] = [
             'name' => $item['name'],
             'price' => $item['price'],
-            'quantity' => $quantity + 1
+            'quantity' => $quantity + 1,
+            'picture' => $item['picture']
+
         ];
         // if (isset($_SESSION['cart'][$id])) {
         //     var_dump($_SESSION, $id, $item);die;
