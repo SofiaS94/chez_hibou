@@ -24,21 +24,28 @@ class CartManager extends AbstractManager
         $item = $itemManager->selectOneById($id);
         $quantity = $_SESSION['cart'][$id]['quantity'] ?? 0;
         $_SESSION['cart'][$id] = [
+            'id' => $item['id'],
             'name' => $item['name'],
             'price' => $item['price'],
             'quantity' => $quantity + 1,
             'picture' => $item['picture']
 
         ];
-        // if (isset($_SESSION['cart'][$id])) {
-        //     var_dump($_SESSION, $id, $item);die;
-        //     $_SESSION['cart'][$id]['quantity']++;
-        // } else {
-        //     $_SESSION['cart'][$id] = [
-        //         'quantity' => 1,
-        //         'name' => $item['name'],
-        //         'price' => $item['price']
-        //     ];
-        // }
+    }
+
+    public function delete(int $id): void
+    {
+        if (!isset($_SESSION)) {
+            session_start();
+        }
+        if (!isset($_SESSION['cart'])) {
+            $_SESSION['cart'] = [];
+        }
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+
+            // Supprimer l'élément correspondant de la session panier
+            unset($_SESSION['cart'][$id]);
+        }
     }
 }

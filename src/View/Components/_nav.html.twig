@@ -1,46 +1,40 @@
-<!-- Navbar -->
+<header><!-- Navbar -->
 <nav
 	class="navbar fixed-top  navbar-expand-lg navbar-light bg-white">
 	<!-- Container wrapper -->
-	<div
-		class="container">
+	<div class="container-fluid">
 		<!-- Toggle button -->
-		<button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
+		<button
+			class="navbar-toggler"
+			type="button"
+			data-mdb-toggle="collapse"
+			data-mdb-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent"
+			aria-expanded="false"
+			aria-label="Toggle navigation"
+		>
 			<i class="fas fa-bars"></i>
 		</button>
 
 		<!-- Collapsible wrapper -->
 		<div
-			class="collapse navbar-collapse" id="navbarSupportedContent1">
+			class="collapse navbar-collapse" id="navbarSupportedContent">
 			<!-- Navbar brand -->
-			<a class="navbar-brand mt-2 mt-sm-0" href="/">
+			<a class="navbar-brand mt-2 mt-sm-0 px-0 px-lg-5 text-end" href="/">
 				<img src="/assets/images/logo.jpg" height="70" alt="Hello Hibou Logo" loading="lazy"/>
 			</a>
 			<!-- Left links -->
-			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
 				<li class="nav-item active">
-					<a class="nav-link" href="/">Accueil</a>
+					<a class="nav-link px-0 px-lg-5 text-end" href="/">Accueil</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="/items">Produits</a>
+					<a class="nav-link px-0 px-lg-5 text-end" href="/items">Produits</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="restaurant/presentation">Le restaurant</a>
+					<a class="nav-link px-0 px-lg-5 text-end" href="restaurant/presentation">Le restaurant</a>
 				</li>
-				{# <li class="nav-item ">
-																																																																																                        <a class="nav-link" href="/reservation">Reservation</a>
-																																																																																                    </li> #}
-
-			</ul>
-			<!-- Left links -->
-		</div>
-		<!-- Collapsible wrapper -->
-
-		<!-- Right elements -->
-		<div class="d-flex align-items-center">
-			<ul
-				class="navbar-nav me-auto mb-2 mb-lg-0">
-				<!-- Icon -->
+				<li class="nav-item">
 				<a class="nav-link position-relative px-0 px-lg-3 text-end" href="/cart/show">
 
 					<i class="fas fa-shopping-cart"></i>
@@ -52,7 +46,7 @@
 					</span>
 					{% endif %}
 				</a>
-
+				</li>
 				{% if user %}
 					<li class="nav-item">
 
@@ -76,10 +70,11 @@
 				{% endif %}
 
 			</ul>
-
+			<!-- Left links -->
 		</div>
-		<!-- Right elements -->
+		<!-- Collapsible wrapper -->
 	</div>
 	<!-- Container wrapper -->
 </nav>
 <!-- Navbar -->
+</header>

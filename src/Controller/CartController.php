@@ -38,4 +38,11 @@ class CartController extends AbstractController
         $cartManager->add($id);
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }
+
+    public function delete($id)
+    {
+        $cartManager = new CartManager();
+        $cartManager->delete($id);
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
+    }
 }
