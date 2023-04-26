@@ -80,7 +80,8 @@ abstract class AbstractManager
 
     public function update(array $user): bool
     {
-        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET phone_number = :phone_number address = :address  adress_2= :adress_2 WHERE id=:id dob=:dob");
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE .
+        " SET phone_number = :phone_number address = :address  adress_2= :adress_2 WHERE id=:id dob=:dob");
         $statement->bindValue('phone_number', $user['phone_number'], \PDO::PARAM_INT);
         $statement->bindValue('address', $user['address'], \PDO::PARAM_STR);
         $statement->bindValue('adress_2', $user['adress_2'], \PDO::PARAM_STR);

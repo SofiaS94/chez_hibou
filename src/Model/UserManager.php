@@ -22,15 +22,35 @@ class UserManager extends AbstractManager
         $statement = $this->pdo->prepare("INSERT INTO " . static::TABLE .
             " (`email`, `password`, `address`, `adress_2`, `firstname`, `lastname`, `phone_number`, `dateOfBirth`)
         VALUES (:email, :password, :address, :adress_2, :firstname, :lastname, :phone_number, :dateOfBirth)");
-        $statement->bindValue(':email', $credentials['email']);
-        $statement->bindValue(':password', password_hash($credentials['password'], PASSWORD_DEFAULT));
-        $statement->bindValue(':address', $credentials['address'] ?? null);
-        $statement->bindValue(':firstname', $credentials['firstname'] ?? null);
-        $statement->bindValue(':lastname', $credentials['lastname'] ?? null);
-        $statement->bindValue(':adress_2', $credentials['adress_2'] ?? null);
-        $statement->bindValue(':phone_number', $credentials['phone_number'] ?? null);
-        $statement->bindValue(':dateOfBirth', $credentials['dateOfBirth'] ?? null);
+        $statement->bindValue('email', $credentials['email']);
+        $statement->bindValue('password', password_hash($credentials['password'], PASSWORD_DEFAULT));
+        $statement->bindValue('address', $credentials['address'] ?? null);
+        $statement->bindValue('firstname', $credentials['firstname'] ?? null);
+        $statement->bindValue('lastname', $credentials['lastname'] ?? null);
+        $statement->bindValue('adress_2', $credentials['adress_2'] ?? null);
+        $statement->bindValue('phone_number', $credentials['phone_number'] ?? null);
+        $statement->bindValue('dateOfBirth', $credentials['dateOfBirth'] ?? null);
         $statement->execute();
         return (int)$this->pdo->lastInsertId();
+    }
+
+
+    public function update(array $credentials): bool
+    {
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE .
+        " SET `email` = :email, `password` = :password, `address` = :address, `adress_2` 
+        = :adress_2, `firstname` = :firstname, `lastname` = :lastname, `phone_number` 
+        = :phone_number, `dateOfBirth` = :dateOfBirth WHERE id = :id");
+        $statement->bindValue('email', $credentials['email']);
+        $statement->bindValue('password', password_hash($credentials['password'], PASSWORD_DEFAULT));
+        $statement->bindValue('address', $credentials['address'] ?? null);
+        $statement->bindValue('firstname', $credentials['firstname'] ?? null);
+        $statement->bindValue('lastname', $credentials['lastname'] ?? null);
+        $statement->bindValue('adress_2', $credentials['adress_2'] ?? null);
+        $statement->bindValue('phone_number', $credentials['phone_number'] ?? null);
+        $statement->bindValue('dateOfBirth', $credentials['dateOfBirth'] ?? null);
+        $statement->bindValue('id', $credentials['id']);
+        $result = $statement->execute();
+        return $result;
     }
 }

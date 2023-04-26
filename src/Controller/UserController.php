@@ -73,4 +73,23 @@ class UserController extends AbstractController
     {
         return $this->twig->render('User/modifyprofil.html.twig');
     }
+
+    /**
+     * Edit profile
+     */
+    public function edit(int $id): string
+    {
+        $userManager = new UserManager();
+        $user = $userManager->selectOneById($id);
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $user = array_map('trim', $_POST);
+            $userManager->update($user);
+            header('Location: /profil?id=' . $id);
+        }
+
+        return $this->twig->render('profil.html.twig', [
+            'item' => $user,
+        ]);
+    }
 }
