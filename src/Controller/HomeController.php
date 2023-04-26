@@ -12,11 +12,11 @@ class HomeController extends AbstractController
     {
         // session_destroy();
         // session_start();
-        return $this->twig->render('Home/index.html.twig');
+        return $this->render('Home/index.html.twig');
     }
 
     public function restaurant(): string
     {
-        return $this->twig->render('Restaurant/presentation.html.twig');
+        return $this->render('Restaurant/presentation.html.twig');
     }
 }

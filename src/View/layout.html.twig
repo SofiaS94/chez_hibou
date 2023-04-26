@@ -25,7 +25,7 @@
 	</head>
 
 	<body>
-		<nav>{% include 'Components/_nav.html.twig' %}</nav>
+		{% include 'Components/_nav.html.twig' %}
 		<main>
 			{% block sideNav %}{% endblock %}
 			{% block content %}{% endblock %}
@@ -34,8 +34,8 @@
 		{% block javascript %}{% endblock %}
 
 
-		<footer>
-			{% include 'Components/_footer.html.twig'%}</footer>
+		
+			{% include 'Components/_footer.html.twig'%}
 	</body>
 
 </html>
