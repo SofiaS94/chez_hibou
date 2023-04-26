@@ -28,8 +28,8 @@
 					<a class="nav-link" href="restaurant/presentation">Le restaurant</a>
 				</li>
 				{# <li class="nav-item ">
-																																																																												                        <a class="nav-link" href="/reservation">Reservation</a>
-																																																																												                    </li> #}
+																																																																																                        <a class="nav-link" href="/reservation">Reservation</a>
+																																																																																                    </li> #}
 
 			</ul>
 			<!-- Left links -->
@@ -41,28 +41,36 @@
 			<ul
 				class="navbar-nav me-auto mb-2 mb-lg-0">
 				<!-- Icon -->
-				<a class="nav-link" href="/cart/show">
+				<a class="nav-link position-relative px-0 px-lg-3 text-end" href="/cart/show">
+
 					<i class="fas fa-shopping-cart"></i>
 					Panier
+					{% if session.cart | length > 0 %}
+					<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill badge-danger">
+						{{ session.cart | length }}
+						<span class="visually-hidden">Vous avez {{ session.cart | length }} dans votre panier </span>
+					</span>
+					{% endif %}
 				</a>
 
 				{% if user %}
 					<li class="nav-item">
 
-						<a class="nav-link" href="/profil">Bienvenue, {{ user.firstname }}</a>
+						<a class="nav-link px-0 px-lg-5 text-end" href="/profil">Bienvenue,
+							{{ user.firstname }}</a>
 
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/logout">Log Out</a>
+						<a class="nav-link px-0 px-lg-5 text-end" href="/logout">Log Out</a>
 					</li>
 
 				{% else %}
 					<li class="nav-item">
-						<a class="nav-link" href="/login">Login</a>
+						<a class="nav-link px-0 px-lg-5 text-end" href="/login">Login</a>
 					</li>
 
 					<li class="nav-item">
-						<a class="nav-link" href="/register">Créer un compte</a>
+						<a class="nav-link px-0 px-lg-5 text-end" href="/register">Créer un compte</a>
 					</li>
 
 				{% endif %}

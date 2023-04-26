@@ -14,7 +14,7 @@ class ItemController extends AbstractController
         $itemManager = new ItemManager();
         $items = $itemManager->selectAll();
 
-        return $this->twig->render('Item/index.html.twig', ['items' => $items]);
+        return $this->render('Item/index.html.twig', ['items' => $items]);
     }
 
     /**
@@ -29,7 +29,7 @@ class ItemController extends AbstractController
         $items = $itemManager->selectByType($typeName);
 
         // Renvoyer la réponse sous forme de vue générée avec les items récupérés
-        return $this->twig->render('Item/' . $typeName . '.html.twig', ['items' => $items]);
+        return $this->render('Item/' . $typeName . '.html.twig', ['items' => $items]);
     }
 }
 
@@ -45,7 +45,7 @@ class ItemController extends AbstractController
     //     $itemManager = new ItemManager();
     //     $item = $itemManager->getById($id);
 
-    //     return $this->twig->render('Item/show.html.twig', ['name' => $item]);
+    //     return $this->render('Item/show.html.twig', ['name' => $item]);
     // }
 
 
@@ -72,7 +72,7 @@ class ItemController extends AbstractController
     //         return null;
     //     }
 
-    //     return $this->twig->render('Item/edit.html.twig', [
+    //     return $this->render('Item/edit.html.twig', [
     //         'item' => $item,
     //     ]);
     // }
