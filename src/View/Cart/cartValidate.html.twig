@@ -20,9 +20,9 @@
 									<div class="d-flex justify-content-between align-items-center mb-4">
 										<div>
 											<p class="mb-1">VOS ACHATS</p>
-											<p class="mb-0">Vous avez
+											<p class="mb-0">Vous avez commandé 
 												{{ cart|length }}
-												plats dans votre panier</p>
+												produits.</p>
 										</div>
 										<div>
 											<p class="mb-0">
@@ -173,7 +173,7 @@
 													<p class="mb-2">{{ totalReduction |round(2)}}€</p>
 												</div>
 											{% endif %}
-											<button type="" href="cartValidate.html.twig"class="btn btn-info btn-block btn-lg">
+											<button type="submit" href="/cartValidate.html.twig"class="btn btn-info btn-block btn-lg">
 												<div class="d-flex justify-content-between">
 													<span>{{montant - (totalReduction|round(2))}}€</span>
 													<span>VALIDER LA COMMANDE
