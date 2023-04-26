@@ -21,7 +21,7 @@ return [
     // 'item/list' => ['ItemController', 'list', ['id']],
     // 'items/add' => ['ItemController', 'add',],
     // 'items/delete' => ['ItemController', 'delete',],
-    'cart/show' => ['CartController', 'show', ['id']],
+    'cart/show' => ['CartController', 'show', ['code']],
     // 'cart/edit' => ['CartController', 'edit', ['id']],
     // 'cart/delete' => ['CartController', 'delete',],
     'login' => ['UserController', 'login'],
@@ -29,5 +29,6 @@ return [
     'logout' => ['UserController', 'logout'],
     'item/add' => ['CartController', 'add', ['id'],],
     'profil' => ['UserController', 'profil'],
+
     'modifyprofil' => ['UserController', 'modifyprofil'],
 ];

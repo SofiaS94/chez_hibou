@@ -34,7 +34,7 @@ class UserController extends AbstractController
                 $errors[] = $exception->getMessage();
             }
         }
-        return  $this->twig->render('User/login.html.twig', [
+        return  $this->render('User/login.html.twig', [
             'errors' => $errors
         ]);
     }
@@ -54,7 +54,7 @@ class UserController extends AbstractController
                 throw new Exception('Failed to register' . $e->getMessage());
             }
         }
-        return $this->twig->render('User/register.html.twig');
+        return $this->render('User/register.html.twig');
     }
 
     public function logout(): void
@@ -66,7 +66,7 @@ class UserController extends AbstractController
 
     public function profil()
     {
-        return $this->twig->render('User/profil.html.twig');
+        return $this->render('User/profil.html.twig');
     }
 
     public function modifyprofil()
