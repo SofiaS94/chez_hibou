@@ -7,8 +7,6 @@ use App\Model\LoginManager;
 
 class LoginController extends AbstractController
 {
-
-
     public function login(): string
     {
         $credentials = $_POST;
@@ -35,12 +33,7 @@ class LoginController extends AbstractController
     }
 
 
-    public function validate(array $credentials){
-
-
+    public function validate(array $credentials)
+    {
     }
-
-
-
-
 }

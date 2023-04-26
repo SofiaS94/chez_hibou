@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block content %}
-	<div class="container d-flex flex-column align-items-left" style="min-height : 100vh;">
+	<div class="container d-flex flex-column align-items-left pt-5" style="min-height : 100vh;">
 		<h1>
 			Mes données personnelles
 		</h1>
@@ -28,8 +28,8 @@
 			<li class="list-group-item">
 				adresse :{{user.address}}</li>
 
-			<li class="list-group-item">
-				adresse secondaire : (adress livraison):{{user.address}}</li>
+			{# <li class="list-group-item">
+				adresse de livrai:{{user.address}}</li> #}
 
 
 		</ul>
@@ -50,11 +50,7 @@
 
 		{% endif %}
 
-		<form action="/modifyprofil" method="post">
-			<div class="mb-3">
-				<button type="submit" class="btn btn-dark btn-block">Modifier</button>
-			</div>
-		</form>
+		<a class="btn btn-dark btn-block" href="/modifyprofil">Modifier</a>
 
 
 	</div>

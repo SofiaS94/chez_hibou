@@ -28,9 +28,9 @@ return [
     'register' => ['UserController', 'register'],
     'logout' => ['UserController', 'logout'],
     'item/add' => ['CartController', 'add', ['id'],],
-    'item/delete' => ['CartController', 'delete', ['id'],],
     'profil' => ['UserController', 'profil'],
 
     'modifyprofil' => ['UserController', 'modifyprofil'],
+    'modifyprofil/edit' => ['UserController', 'edit'],
 
 ];

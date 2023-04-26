@@ -24,9 +24,9 @@
 		</title>
 	</head>
 
-	<body class="d-flex flex-column justify-content-around">
+	<body class="d-flex flex-column justify-content-between min-vh-100">
 		{% include 'Components/_nav.html.twig' %}
-		<main>
+		<main class="pt-5">
 			{% block sideNav %}{% endblock %}
 			{% block content %}{% endblock %}
 		</main>

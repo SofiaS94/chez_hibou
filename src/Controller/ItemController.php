@@ -28,7 +28,7 @@ class ItemController extends AbstractController
         $items = $itemManager->selectByType($type);
 
         // Renvoyer la réponse sous forme de vue générée avec les items récupérés
-        return $this->render('Item/' . $typeName . '.html.twig', ['items' => $items]);
+        return $this->render('Item/' . $type . '.html.twig', ['items' => $items]);
     }
 }
 

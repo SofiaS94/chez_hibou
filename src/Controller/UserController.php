@@ -73,22 +73,21 @@ class UserController extends AbstractController
 
     public function modifyprofil()
     {
-
         return $this->twig->render('User/modifyprofil.html.twig');
     }
 
     /**
      * Edit profile
      */
-    public function edit(int $id): string
+    public function edit(): string
     {
         $userManager = new UserManager();
-        $user = $userManager->selectOneById($id);
+        $user = $userManager->selectOneById($_SESSION['user_id']);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $user = array_map('trim', $_POST);
             $userManager->update($user);
-            header('Location: /profil?id=' . $id);
+            header('Location: /profil?id=' . $_SESSION['user_id']);
             exit();
         }
 

@@ -27,12 +27,6 @@
     background-color: #e53935;
 }
 
-main{
-    margin-top: 8rem;
-    /* margin-bottom: 2rem; */
-    
-}
-
 #sidebarMenu {
     /* Définir la largeur souhaitée pour la barre latérale */
     width: 300px;
