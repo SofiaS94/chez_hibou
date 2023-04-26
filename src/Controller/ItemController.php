@@ -20,13 +20,12 @@ class ItemController extends AbstractController
     /**
      * List all items dans food
      */
-    public function listByType(string $typeName = 'entree'): string
+    public function listByType(string $type = 'entree'): string
     {
         // Récupérer le type de plat sélectionné depuis les paramètres de requête HTTP
-        $typeName = $_GET['type'] ?? 'entree'; // Utiliser 'entree' comme valeur par défaut
 
         $itemManager = new ItemManager();
-        $items = $itemManager->selectByType($typeName);
+        $items = $itemManager->selectByType($type);
 
         // Renvoyer la réponse sous forme de vue générée avec les items récupérés
         return $this->render('Item/' . $typeName . '.html.twig', ['items' => $items]);
